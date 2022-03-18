@@ -1,6 +1,6 @@
 function navbar() {
   return ` <div id="navbar">
-      <div id="home"> <a href="homee.html">Home </a></label></div>
+      <div id="home"> <a href="index.html">Home </a></label></div>
       <div id="Search">
         <input type="text" id="value" placeholder="Search your dish here ..." />
       </div>
