@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./style/homestyle.css" />
+
+  <body>
+    <div id="nav"></div>
+    <div id="cont"></div>
+  </body>
+</html>
+<script type="module">
+  import navbar from "./style/Navbar.js";
+  import { getData, appendData } from "./style/data1.js";
+
+  var nav = document.getElementById("nav");
+  var cont = document.getElementById("cont");
+  nav.innerHTML = navbar();
+
+  let response = getData("https://www.themealdb.com/api/json/v1/1/random.php");
+  response.then((res) => {
+    appendData(res, cont);
+
+    console.log(res);
+  });
+</script>

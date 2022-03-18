@@ -1,0 +1,38 @@
+#navbar {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  height: 150px;
+  width: auto;
+  background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+}
+#option {
+  justify-content: space-between;
+  width: 300px;
+  display: flex;
+}
+
+#value {
+  height: 40px;
+  width: 500px;
+}
+#cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  margin-top: 100px;
+  /* margin: auto; */
+}
+#cont > div {
+  width: 300px;
+}
+#cont > div > img {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}

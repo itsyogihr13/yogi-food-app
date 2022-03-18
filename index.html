@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/homestyle.css" />
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="cont"></div>
+  </body>
+</html>
+<script type="module">
+  let id;
+  import navbar from "./style/Navbar.js";
+  import { getData, appendData } from "./style/data1.js";
+
+  var nav = document.getElementById("nav");
+  var cont = document.getElementById("cont");
+  nav.innerHTML = navbar();
+
+  let value;
+  document.getElementById("value").addEventListener("input", function () {
+    value = document.getElementById("value").value;
+    debounce(blow, 1000);
+  });
+  function blow() {
+    let response = getData(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`
+    );
+    response.then((res) => {
+      appendData(res, cont);
+      console.log(response);
+
+      console.log(res);
+    });
+  }
+
+  function debounce(func, delay) {
+    if (id) {
+      clearTimeout(id);
+    }
+    id = setTimeout(function () {
+      func();
+    }, delay);
+  }
+</script>
+
+<!-- <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png"  -->
